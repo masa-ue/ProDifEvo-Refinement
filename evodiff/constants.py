@@ -1,0 +1,8 @@
+from sequence_models.constants import AAINDEX_ALPHABET, AMB_AAS, OTHER_AAS, GAP, STOP, MASK, START, MSA_PAD,\
+                                      MSA_ALPHABET, MSA_AAS
+
+
+# FOR BLOSUM MATRIX CREATION ONLY (In order of BLOSUM indices for mapping onto MSA_ALPHABET)
+BLOSUM_AAS = AAINDEX_ALPHABET + AMB_AAS
+BLOSUM_ALPHABET = BLOSUM_AAS + OTHER_AAS + GAP + MSA_PAD + STOP + MASK + START
+BLOSUM_EXTRAS = 'JOU-'
