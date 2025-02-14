@@ -3,7 +3,6 @@
 This is a code accompanied by a paper in XXX. By combining discrete diffusion models for protein sequences and reward models (i.e., seq -> target property), our method can effectively perform computational protein design. Our approach is summarized as a method that iterates reward-guided generation and noising.  
 
 
-
 Here, we show results on optimizing on several fundamental strucutural rewards: ``SS match``, ``cRMSD``, ``globularity``, ``symmetry``. We can also optimize additional functionss such as ``ptm``, ``plddt``, ``hydrophbicity``. All of rewards are defined on top the outputs of seq->strucutre model based on ESMfold. 
 
 #### Generated Proteins 
@@ -97,7 +96,7 @@ Design a sequence that fold into the certain structure.
 CUDA_VISIBLE_DEVICES=3 python refinement.py --decoding SVDD_edit  --repeatnum 20 --duplicate 20  --metrics_name crmsd  --metrics_list 1 --proteinname 5KPH --iteration 40
 ```
 
-#### 4. SS (secondary structure) Match
+#### 4. SS (secondary structure) match
 ```
 CUDA_VISIBLE_DEVICES=4 python refinement.py --decoding SVDD_edit  --repeatnum 10 --duplicate 20  --metrics_name match_ss  --metrics_list 1 --proteinname r15_96_TrROS_Hall --iteration 30
 ```
@@ -120,7 +119,7 @@ CUDA_VISIBLE_DEVICES=6 python refinement.py --decoding SVDD_edit  --repeatnum 10
 
 ### Outputs 
 
-Refer to the notebook. We save the pdb files of batches in each iteration. 
+Refer to the notebook ```medias/evaluate.ipynb```. We save the pdb files of batches in each iteration. 
 
 ----
 
