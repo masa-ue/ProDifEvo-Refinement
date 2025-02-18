@@ -36,12 +36,6 @@ We present results on optimizing several fundamental structural rewards, includi
     <figcaption style="text-align: center;">cRMSD</figcaption>
   </figure>
 
-  <figure style="margin: 0;">
-    <img src="medias/ss_match_r15.png" alt="Image 4" width="160"/>
-    <figcaption style="text-align: center;">ss-match</figcaption>
-  </figure>
-
-
 </div>
 
 
