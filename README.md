@@ -19,7 +19,7 @@ Below are examples of trajectories obtained when optimizing structural propertie
 We present results on optimizing several fundamental structural rewards, including ``symmetry``, ``globularity``, ``match_ss``, ``crmsd``.  We can further optimize ``ptm``,``plddt``,``tm``,``lddt``,``hydrophobic``,``surface_expose``. All rewards are defined based on the outputs of a sequence-to-structure model using ESMFold. Below, we visualize examples of the generated sequences, where ESMFold is used to predict their structures.
 
 
-<div style="display: flex; gap: 20px;">
+<div style="display: flex; gap: 10px;">
 
   <figure style="margin: 0;">
     <img src="medias/symmetric.png" alt="Image 1" width="180"/>
