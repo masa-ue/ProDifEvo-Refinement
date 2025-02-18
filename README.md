@@ -1,17 +1,23 @@
 ## Description 
 
-This is a code accompanied by a paper in XXX. By combining discrete diffusion models for protein sequences and reward models (i.e., seq -> target property), our method can effectively perform computational protein desigsn. Our approach is summarized as a method that iterates reward-guided generation and noising.  
+This repository contains the code accompanying our paper in XXX. We propose a method that integrates pre-trained discrete diffusion models for protein sequences with reward models (i.e., seq → target property) at test time for computational protein design. Our algorithm effectively optimizes both the reward function and sequence naturalness characterzied by pre-trained diffusion models. Unlike existing single-shot guided approaches in diffusion models, our method uses an iterative refinement process inspired by evolutionary algorithms, alternating between (derivative-free) reward-guided generation and noising. 
 
 <p align="center">
-  <img src="medias/output_ss.gif" width="45%">
-  <img src="medias/output_cRMSD.gif" width="45%">
+  <img src="medias/sum_algorithm.png" width="33%">
+</p>
+
+Below are examples of trajectories obtained when optimizing structural properties as rewards
+
+<p align="center">
+  <img src="medias/output_ss.gif" width="44%">
+  <img src="medias/output_cRMSD.gif" width="44%">
 </p>
 
 
-Here, we show results on optimizing on several fundamental strucutural rewards: ``SS match``, ``cRMSD``, ``globularity``, ``symmetry``. We can also optimize additional functionss such as ``ptm``, ``plddt``, ``hydrophbicity``. All of rewards are defined on top the outputs of seq->strucutre model based on ESMfold. 
-
 #### Generated Proteins 
-The examples of generated sequences are visualized as follows (here, we use ESMfold to fold sequecnes).
+
+We present results on optimizing several fundamental structural rewards, including ``symmetry``, ``globularity``, ``match_ss``, ``crmsd``.  We can further optimize ``ptm``,``plddt``,``tm``,``lddt``,``hydrophobic``,``surface_expose``. All rewards are defined based on the outputs of a sequence-to-structure model using ESMFold. Below, we visualize examples of the generated sequences, where ESMFold is used to predict their structures.
+
 
 <div style="display: flex; gap: 20px;">
 
@@ -38,23 +44,6 @@ The examples of generated sequences are visualized as follows (here, we use ESMf
 
 </div>
 
-#### Iteration Curve 
-
-The effectivenss of the iteration is seen as follows. 
-
-<div style="display: flex; gap: 20px;">
-
-  <figure style="margin: 0;">
-    <img src="medias/cRMSD_5KPH.png" alt="Image 1" width="200"/>
-    <figcaption style="text-align: center;">XXX</figcaption>
-  </figure>
-
-  <figure style="margin: 0;">
-    <img src="medias/cRMSD_5KPH.png" alt="Image 2" width="200"/>
-    <figcaption style="text-align: center;">XXXX</figcaption>
-  </figure>
-
-</div>
 
 ----
 
@@ -95,18 +84,23 @@ CUDA_VISIBLE_DEVICES=2 python refinement.py --decoding SVDD_edit  --repeatnum 10
 
 #### 3. cRMSD 
 
-Design a sequence that fold into the certain structure. 
+Design a sequence that fold into a target structure. 
 
 ```
 CUDA_VISIBLE_DEVICES=3 python refinement.py --decoding SVDD_edit  --repeatnum 20 --duplicate 20  --metrics_name crmsd  --metrics_list 1 --proteinname 5KPH --iteration 40
 ```
 
 #### 4. SS (secondary structure) match
+
+Design a sequence that fold into a target secondary structure. 
+
 ```
 CUDA_VISIBLE_DEVICES=4 python refinement.py --decoding SVDD_edit  --repeatnum 10 --duplicate 20  --metrics_name match_ss  --metrics_list 1 --proteinname r15_96_TrROS_Hall --iteration 30
 ```
 
 #### 5. TM score 
+
+Design a sequence that fold into a target structure. 
 
 ```
 CUDA_VISIBLE_DEVICES=5 python refinement.py --decoding SVDD_edit  --repeatnum 10 --duplicate 20  --metrics_name tm  --metrics_list 1 --proteinname 5KPH --iteration 30
@@ -130,7 +124,7 @@ Refer to the notebook ```medias/evaluate.ipynb```. We save the pdb files of batc
 
 ### Installation 
 
-Install pytroch, pyrosseta 
+Install pytroch, pyrosseta. Then, run the following
 
 ```
 conda create -n RERD python=3.9 
