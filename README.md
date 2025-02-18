@@ -1,6 +1,11 @@
 ## Description 
 
-This is a code accompanied by a paper in XXX. By combining discrete diffusion models for protein sequences and reward models (i.e., seq -> target property), our method can effectively perform computational protein design. Our approach is summarized as a method that iterates reward-guided generation and noising.  
+This is a code accompanied by a paper in XXX. By combining discrete diffusion models for protein sequences and reward models (i.e., seq -> target property), our method can effectively perform computational protein desigsn. Our approach is summarized as a method that iterates reward-guided generation and noising.  
+
+<p align="center">
+  <img src="medias/output_ss.gif" width="45%">
+  <img src="medias/output_cRMSD.gif" width="45%">
+</p>
 
 
 Here, we show results on optimizing on several fundamental strucutural rewards: ``SS match``, ``cRMSD``, ``globularity``, ``symmetry``. We can also optimize additional functionss such as ``ptm``, ``plddt``, ``hydrophbicity``. All of rewards are defined on top the outputs of seq->strucutre model based on ESMfold. 

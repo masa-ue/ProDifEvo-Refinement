@@ -13,3 +13,5 @@ datasets/artifacts/
 datasets/processed_data/
 */wandb/*
 */try.ipynb
+README2.md
+.DS_Store
