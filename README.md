@@ -1,6 +1,6 @@
 ## Description 
 
-This repository contains the code accompanying our paper in XXX. We propose a method that integrates pre-trained discrete diffusion models for protein sequences with reward models (i.e., seq → target property) at test time for computational protein design. Our algorithm effectively optimizes both the reward function and sequence naturalness characterzied by pre-trained diffusion models. Unlike existing single-shot guided approaches in diffusion models, our method uses an iterative refinement process inspired by evolutionary algorithms, alternating between (derivative-free) reward-guided generation and noising. 
+This repository contains the code accompanying our paper in XXX. We propose a method that integrates pre-trained discrete diffusion models (e.g., [EvoDiff](https://github.com/microsoft/evodiff)) for protein sequences with reward models (i.e., seq → target property) at test time for computational protein design. **Our algorithm effectively optimizes the reward function while retaining sequence naturalness characterzied by pre-trained diffusion models**. Unlike existing single-shot guided approaches in diffusion models, our method uses an **iterative refinement** approach inspired by evolutionary algorithms, alternating between (derivative-free) reward-guided generation and noising. 
 
 <p align="center">
   <img src="medias/sum_algorithm.png" width="60%">
