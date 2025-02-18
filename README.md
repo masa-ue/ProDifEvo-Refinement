@@ -3,7 +3,7 @@
 This repository contains the code accompanying our paper in XXX. We propose a method that integrates pre-trained discrete diffusion models for protein sequences with reward models (i.e., seq → target property) at test time for computational protein design. Our algorithm effectively optimizes both the reward function and sequence naturalness characterzied by pre-trained diffusion models. Unlike existing single-shot guided approaches in diffusion models, our method uses an iterative refinement process inspired by evolutionary algorithms, alternating between (derivative-free) reward-guided generation and noising. 
 
 <p align="center">
-  <img src="medias/sum_algorithm.png" width="33%">
+  <img src="medias/sum_algorithm.png" width="50%">
 </p>
 
 Below are examples of trajectories obtained when optimizing structural properties as rewards
@@ -20,22 +20,18 @@ We present results on optimizing several fundamental structural rewards, includi
 
 
 <div style="display: flex; gap: 10px;">
-
   <figure style="margin: 0;">
     <img src="medias/symmetric.png" alt="Image 1" width="180"/>
-    <figcaption style="text-align: center;">Symmetric proteins</figcaption>
+    <figcaption>Symmetric proteins</figcaption>
   </figure>
-
   <figure style="margin: 0;">
     <img src="medias/globularity.png" alt="Image 2" width="150"/>
     <figcaption style="text-align: center;">Globularity</figcaption>
   </figure>
-
   <figure style="margin: 0;">
     <img src="medias/crsmd_5kph_0.8.png" alt="Image 3" width="190"/>
     <figcaption style="text-align: center;">cRMSD</figcaption>
   </figure>
-
 </div>
 
 
@@ -126,6 +122,11 @@ conda activate RERD
 pip3 install torch torchvision torchaudio
 pip3 install -r requirements.txt
 ```
+Also, to optimize ``match_ss``, ``crmsd``, go to the ``./datasets`` folder and download examples of proteins as follows. 
+```
+python download_model_data.py
+```
+
 -----------
 
 ### Acknolwdgements 
